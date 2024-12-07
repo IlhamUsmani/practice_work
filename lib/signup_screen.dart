@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:practice_work/custom_buttons.dart';
+import 'package:practice_work/common_widgets/custom_buttons.dart';
 import 'package:practice_work/forget_passward_row.dart';
-import 'package:practice_work/custom_text.dart';
+import 'package:practice_work/common_widgets/custom_text.dart';
 import 'package:practice_work/screen_constants.dart';
 import 'package:practice_work/screen_size.dart';
 import 'package:practice_work/side_containers.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_work/dropdown_widget.dart';
+import 'package:practice_work/signup_screen_widgets.dart/dropdown_widget.dart';
 import 'package:practice_work/screen_constants.dart';
 import 'package:practice_work/screen_size.dart';
 import 'package:practice_work/string_constants.dart';

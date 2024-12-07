@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_work/screen_constants.dart';
-import 'package:practice_work/screen_size.dart';
+
 import 'package:practice_work/string_constants.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -8,11 +7,13 @@ class CustomTextField extends StatelessWidget {
       {super.key,
       required this.text,
       this.icon,
+      this.hintStyle = const TextStyle(color: darkGrey, fontSize: 12),
       this.height = 70,
       this.width = 360});
   final String text;
   final Widget? icon;
   final double height, width;
+  final TextStyle? hintStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +26,7 @@ class CustomTextField extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           hintText: text,
-          hintStyle: TextStyle(
-              color: Colors.grey.shade600,
-              fontSize: ScreenSize.height * zeroPointZeroOneSeven),
+          hintStyle: hintStyle,
           suffixIcon: icon,
           border: border,
           enabledBorder: border,

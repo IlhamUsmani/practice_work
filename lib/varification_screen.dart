@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:practice_work/custom_text.dart';
+import 'package:practice_work/common_widgets/custom_text.dart';
 import 'package:practice_work/screen_constants.dart';
 import 'package:practice_work/screen_size.dart';
-import 'package:practice_work/signin_toprow.dart';
+import 'package:practice_work/common_widgets/toprow.dart';
 import 'package:practice_work/string_constants.dart';
 import 'package:practice_work/verification_button_row.dart';
 

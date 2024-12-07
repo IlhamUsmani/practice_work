@@ -6,7 +6,7 @@ class VerificationButtonRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         VerificationButtons(
@@ -14,7 +14,7 @@ class VerificationButtonRow extends StatelessWidget {
           text: resend,
           textColor: black,
         ),
-        const VerificationButtons(
+        VerificationButtons(
           color: lightGreen,
           text: verify,
           textColor: white,
