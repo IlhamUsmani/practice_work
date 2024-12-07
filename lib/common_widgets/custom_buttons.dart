@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:practice_work/core/constants/screen_constants.dart';
 import 'package:practice_work/core/constants/string_constants.dart';
-import 'package:practice_work/feature/auth/view_model/auth_controller.dart';
+
 import 'package:practice_work/screen_size.dart';
 
 class CustomButton extends StatelessWidget {
