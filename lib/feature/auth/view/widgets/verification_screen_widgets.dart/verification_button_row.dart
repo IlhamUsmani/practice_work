@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:practice_work/string_constants.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:practice_work/core/constants/string_constants.dart';
+import 'package:practice_work/feature/auth/view_model/auth_controller.dart';
 
-class VerificationButtonRow extends StatelessWidget {
+class VerificationButtonRow extends ConsumerWidget {
   const VerificationButtonRow({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const Row(
+  Widget build(BuildContext context, WidgetRef ref) {
+    var provider = ref.read(authControllerProvider.notifier);
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         VerificationButtons(
+          onPressed: () {
+            provider.otpResend(context);
+          },
           color: lightestGrey,
           text: resend,
           textColor: black,
         ),
         VerificationButtons(
+          onPressed: () {
+            provider.verifyOtp(context);
+          },
           color: lightGreen,
           text: verify,
           textColor: white,
@@ -27,11 +36,14 @@ class VerificationButtonRow extends StatelessWidget {
 class VerificationButtons extends StatelessWidget {
   const VerificationButtons(
       {super.key,
+      required this.onPressed,
       required this.color,
       required this.text,
       required this.textColor});
   final Color color;
   final String text;
+
+  final VoidCallback? onPressed;
   final Color textColor;
 
   @override
@@ -47,7 +59,7 @@ class VerificationButtons extends StatelessWidget {
           )),
           backgroundColor: WidgetStatePropertyAll(color),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           text,
           style: TextStyle(color: textColor),

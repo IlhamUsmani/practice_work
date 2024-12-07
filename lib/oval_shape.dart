@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_work/string_constants.dart';
+import 'package:practice_work/core/constants/string_constants.dart';
 
 class OvalPainter extends CustomPainter {
   @override

@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:practice_work/botton_nevigation.dart';
 import 'package:practice_work/common_widgets/home_screen_card_row.dart';
+import 'package:practice_work/core/constants/screen_constants.dart';
+import 'package:practice_work/core/constants/string_constants.dart';
+import 'package:practice_work/home_screen_card.dart';
 import 'package:practice_work/home_screen_progessbar.dart';
 import 'package:practice_work/home_screen_two_containers.dart';
 import 'package:practice_work/oval_shape.dart';
-import 'package:practice_work/screen_constants.dart';
+
 import 'package:practice_work/screen_size.dart';
-import 'package:practice_work/string_constants.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+  static const pageName = '/home-screen';
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class HomeScreen extends StatelessWidget {
           child: SingleChildScrollView(
             primary: false,
             child: SizedBox(
-              height: ScreenSize.height * 1.28,
+              height: ScreenSize.height * onePointTwoEight,
               width: ScreenSize.width,
               child: Stack(
                 children: [
@@ -39,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                     left: ScreenSize.width * zeroPointOneTwo,
                     top: ScreenSize.height * zeroPointZeroTwoFive,
                     child: Text(
-                      'Hi, Zohaib Hassan',
+                      zohaib,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: ScreenSize.height * zeroPointZeroTwoZero,
@@ -62,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                             color: darkGreen,
                           ),
                           Text(
-                            'Verified',
+                            verified,
                             style: TextStyle(
                                 fontSize:
                                     ScreenSize.height * zeroPointZeroOneFive),
@@ -72,13 +75,13 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                      left: ScreenSize.width * 0.85,
+                      left: ScreenSize.width * zeroPointEightFive,
                       top: ScreenSize.height * zeroPointZeroTwoZero,
                       child: Icon(Icons.notifications,
                           size: ScreenSize.height * zeroPointZeroFive)),
                   Positioned(
-                    left: ScreenSize.width * 0.903,
-                    top: ScreenSize.height * 0.007,
+                    left: ScreenSize.width * zeroPointNineZeroThree,
+                    top: ScreenSize.height * zeroPointZeroZeroSeven,
                     child: Container(
                       padding: const EdgeInsets.all(7),
                       decoration: const BoxDecoration(
@@ -86,20 +89,21 @@ class HomeScreen extends StatelessWidget {
                       child: Text('1',
                           style: TextStyle(
                               color: white,
-                              fontSize: ScreenSize.height * 0.008)),
+                              fontSize:
+                                  ScreenSize.height * zeroPointZeroZeroEight)),
                     ),
                   ),
                   Positioned(
                       top: ScreenSize.height * zeroPointFourFive,
                       height: ScreenSize.height * zeroPointFourFive,
-                      width: ScreenSize.width * 0.97,
+                      width: ScreenSize.width * zeroPointNineSeven,
                       child: Container(
                         color: lightestGrey,
                         padding: const EdgeInsets.all(10),
                         child: Stack(children: [
                           Positioned(
                             top: ScreenSize.height * zeroPointZeroTwoZero,
-                            child: Image.asset('assets/images/homeImage.png'),
+                            child: Image.asset(homeImage),
                           ),
                           Positioned(
                             top: ScreenSize.height * zeroPointTwoFive,
@@ -130,7 +134,7 @@ class HomeScreen extends StatelessWidget {
                                 padding: EdgeInsets.only(bottom: 20),
                                 child: Center(
                                   child: Text(
-                                    'My Tree Pool',
+                                    treePool,
                                     style: TextStyle(
                                         color: darkGreen,
                                         fontWeight: FontWeight.bold),
@@ -149,7 +153,7 @@ class HomeScreen extends StatelessWidget {
                               painter: OvalPainter(),
                               child: const Center(
                                 child: Text(
-                                  '10,000 Trees',
+                                  trees,
                                   style: TextStyle(
                                     color: darkGreen,
                                     fontSize: 12,
@@ -160,20 +164,20 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            top: ScreenSize.height * 0.03,
-                            left: ScreenSize.width * 0.58,
+                            top: ScreenSize.height * zeroPointZeroThreeZero,
+                            left: ScreenSize.width * zeroPointFiveEight,
                             child: HomeScreenContainer(
                               color: darkGreen,
                               child: Icon(
                                 Icons.add,
-                                size: ScreenSize.height * 0.05,
+                                size: ScreenSize.height * zeroPointZeroFive,
                                 color: white,
                               ),
                             ),
                           ),
                           Positioned(
                             top: ScreenSize.height * zeroPointZeroOne,
-                            left: ScreenSize.width * 0.715,
+                            left: ScreenSize.width * zeroPointSevenOneFive,
                             width: ScreenSize.width * zeroPointTwo,
                             height: ScreenSize.height * zeroPointTwo,
                             child: HomeScreenContainer(
@@ -183,19 +187,19 @@ class HomeScreen extends StatelessWidget {
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
-                                        Text('Add',
+                                        Text(add,
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 color: white,
-                                                fontSize:
-                                                    ScreenSize.height * 0.012)),
+                                                fontSize: ScreenSize.height *
+                                                    zeroPointZeroOneTwo)),
                                         Text(
-                                          'Green Project',
+                                          greenProject,
                                           style: TextStyle(
                                               color: white,
                                               fontWeight: FontWeight.bold,
-                                              fontSize:
-                                                  ScreenSize.height * 0.012),
+                                              fontSize: ScreenSize.height *
+                                                  zeroPointZeroOneTwo),
                                         ),
                                       ],
                                     ),
@@ -210,50 +214,11 @@ class HomeScreen extends StatelessWidget {
                         ]),
                       )),
                   Positioned(
-                    top: ScreenSize.height * 0.17,
-                    height: ScreenSize.height * 0.3,
-                    width: ScreenSize.width * 0.95,
-                    left: ScreenSize.width * 0.02,
-                    child: Container(
-                        padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          color: lightestGrey,
-                          borderRadius: BorderRadius.circular(7),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.3),
-                              spreadRadius: 8,
-                              blurRadius: 16,
-                              offset: const Offset(0, 4),
-                            ),
-                          ],
-                        ),
-                        child: const Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              HomeScreenCardRow(
-                                text: 'Carbon Credit Available',
-                                containerColor: darkGreen,
-                                flex: 3,
-                                textFlex: 3,
-                                padding: 0,
-                              ),
-                              HomeScreenCardRow(
-                                text: 'Carbon Credit Sold',
-                                containerColor: darkBlue,
-                                flex: 4,
-                                padding: 17,
-                                textFlex: 3,
-                              ),
-                              HomeScreenCardRow(
-                                textFlex: 5,
-                                padding: 17,
-                                text: 'Carbon Credit Earned',
-                                containerColor: lightGreen,
-                                flex: 7,
-                              ),
-                            ])),
-                  ),
+                      top: ScreenSize.height * 0.17,
+                      height: ScreenSize.height * 0.3,
+                      width: ScreenSize.width * 0.95,
+                      left: ScreenSize.width * 0.02,
+                      child: const HomeScreenCard()),
                   Positioned(
                     top: ScreenSize.height * 0.15,
                     left: ScreenSize.width * 0.05,
@@ -263,23 +228,22 @@ class HomeScreen extends StatelessWidget {
                           borderRadius: BorderRadius.all(Radius.circular(5)),
                           color: Color.fromARGB(255, 4, 28, 66)),
                       child: Text(
-                        'Account Summary',
+                        accountSummary,
                         style: TextStyle(
                             color: white,
-                            fontSize: ScreenSize.height * 0.015,
+                            fontSize: ScreenSize.height * zeroPointZeroOneFive,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
                   Positioned(
-                      top: ScreenSize.height * 0.95,
-                      height: ScreenSize.height * 0.33,
+                      top: ScreenSize.height * zeroPointNineFive,
+                      height: ScreenSize.height * zeroPointThreeThree,
                       width: ScreenSize.width,
-                      child: Image.asset(
-                          'assets/images/homescreen_lastImage.png')),
+                      child: Image.asset(lastImage)),
                   Positioned(
                     top: ScreenSize.height * 1,
-                    left: ScreenSize.width * 0.02,
+                    left: ScreenSize.width * zeroPointZeroTwoZero,
                     child: Column(
                       children: [
                         for (int i = 0; i < 3; i++)
@@ -287,11 +251,34 @@ class HomeScreen extends StatelessWidget {
                             list[i],
                             style: TextStyle(
                                 color: white,
-                                fontSize: ScreenSize.height * 0.016),
+                                fontSize:
+                                    ScreenSize.height * zeroPointZeroOneFive),
                           ),
                       ],
                     ),
                   ),
+                  Positioned(
+                    top: ScreenSize.height * 0.92,
+                    left: ScreenSize.width * 0.03,
+                    child: Container(
+                        padding: const EdgeInsets.all(12),
+                        color: darkGreen,
+                        child: Row(
+                          children: [
+                            Text(recentProjects,
+                                style: TextStyle(
+                                  fontSize:
+                                      ScreenSize.height * zeroPointZeroOneTwo,
+                                  fontWeight: FontWeight.bold,
+                                  color: white,
+                                )),
+                            const Icon(
+                              Icons.arrow_forward_outlined,
+                              color: white,
+                            )
+                          ],
+                        )),
+                  )
                 ],
               ),
             ),

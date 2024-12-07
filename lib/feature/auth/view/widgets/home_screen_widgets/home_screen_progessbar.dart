@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
-import 'package:practice_work/screen_constants.dart';
-import 'package:practice_work/screen_size.dart';
+import 'package:practice_work/core/constants/screen_constants.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:practice_work/string_constants.dart';
+import 'package:practice_work/core/constants/string_constants.dart';
+import 'package:practice_work/screen_size.dart';
 
 class HomeScreenProgessBar extends StatelessWidget {
   const HomeScreenProgessBar({super.key});

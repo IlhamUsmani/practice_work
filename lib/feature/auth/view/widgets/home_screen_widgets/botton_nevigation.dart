@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:practice_work/core/constants/string_constants.dart';
 import 'package:practice_work/screen_size.dart';
-import 'package:practice_work/string_constants.dart';
 
-class BottomNavigation extends StatefulWidget {
+class BottomNavigation extends StatelessWidget {
   const BottomNavigation({super.key});
 
   @override
-  State<BottomNavigation> createState() => _BottomNavigationState();
-}
-
-class _BottomNavigationState extends State<BottomNavigation> {
-  int _selectedIndex = 0;
-  final List<_NavItem> _bottomNavItems = [
-    _NavItem(icon: homeIcon, label: 'Home'),
-    _NavItem(icon: treeIcon, label: 'Projects'),
-    _NavItem(icon: walletIcon, label: 'Wallet'),
-    _NavItem(icon: targetIcon, label: 'Target'),
-  ];
-  @override
   Widget build(BuildContext context) {
+    final List<_NavItem> _bottomNavItems = [
+      _NavItem(icon: homeIcon, label: 'Home'),
+      _NavItem(icon: treeIcon, label: 'Projects'),
+      _NavItem(icon: walletIcon, label: 'Wallet'),
+      _NavItem(icon: targetIcon, label: 'Target'),
+    ];
+
     return Container(
       height: ScreenSize.height * 0.12,
       width: ScreenSize.width * 0.7,
@@ -30,10 +25,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.lightGreen.withOpacity(0.7), // Stronger green shadow
-            blurRadius: 30, // Increased blur for a softer look
-            spreadRadius: 10, // Larger spread for more coverage
-            offset: const Offset(0, 10), // Shadow moves further down
+            color: Colors.lightGreen.withOpacity(0.7),
+            blurRadius: 30,
+            spreadRadius: 10,
+            offset: const Offset(0, 10),
           ),
         ],
       ),
@@ -46,11 +41,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
                 icon: SizedBox(
                     width: ScreenSize.width * 0.07,
                     child: Image.asset(_bottomNavItems[i].icon)),
-                onPressed: () {
-                  setState(() {
-                    _selectedIndex = i;
-                  });
-                },
+                onPressed: () {},
               ),
               Text(
                 _bottomNavItems[i].label,

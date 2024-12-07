@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:practice_work/screen_constants.dart';
+import 'package:practice_work/core/constants/screen_constants.dart';
+import 'package:practice_work/core/constants/string_constants.dart';
 import 'package:practice_work/screen_size.dart';
-import 'package:practice_work/string_constants.dart';
 
 class TermConditionRow extends StatefulWidget {
   const TermConditionRow({super.key});
