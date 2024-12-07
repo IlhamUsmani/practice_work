@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:practice_work/screen_constants.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:practice_work/core/constants/screen_constants.dart';
+import 'package:practice_work/core/constants/string_constants.dart';
+import 'package:practice_work/feature/auth/view_model/auth_controller.dart';
 import 'package:practice_work/screen_size.dart';
-import 'package:practice_work/string_constants.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.color, required this.image});
@@ -44,14 +46,15 @@ class ButtonRow extends StatelessWidget {
   }
 }
 
-class CustomElevatedButton extends StatelessWidget {
+class CustomElevatedButton extends ConsumerWidget {
   const CustomElevatedButton({super.key, required this.text, this.elevation});
   final String text;
 
   final WidgetStatePropertyAll<double>? elevation;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    final authController = ref.read(authControllerProvider.notifier);
     return ElevatedButton(
       style: ButtonStyle(
         elevation: elevation,
@@ -63,7 +66,7 @@ class CustomElevatedButton extends StatelessWidget {
         shape: WidgetStatePropertyAll(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))),
       ),
-      onPressed: () {},
+      onPressed: authController.requestOtp(),
       child: Text(text, style: const TextStyle(color: white)),
     );
   }

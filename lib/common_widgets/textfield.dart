@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:practice_work/string_constants.dart';
+import 'package:practice_work/core/constants/string_constants.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
@@ -9,11 +8,13 @@ class CustomTextField extends StatelessWidget {
       this.icon,
       this.hintStyle = const TextStyle(color: darkGrey, fontSize: 12),
       this.height = 70,
-      this.width = 360});
+      this.width = 360,
+      required this.controller});
   final String text;
   final Widget? icon;
   final double height, width;
   final TextStyle? hintStyle;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +25,7 @@ class CustomTextField extends StatelessWidget {
       width: width,
       height: height,
       child: TextField(
+        controller: controller,
         decoration: InputDecoration(
           hintText: text,
           hintStyle: hintStyle,

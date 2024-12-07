@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:practice_work/common_widgets/custom_buttons.dart';
-import 'package:practice_work/list_of_textfield.dart';
 import 'package:practice_work/common_widgets/custom_text.dart';
-import 'package:practice_work/screen_constants.dart';
-import 'package:practice_work/screen_size.dart';
 import 'package:practice_work/common_widgets/toprow.dart';
-import 'package:practice_work/string_constants.dart';
-import 'package:practice_work/term_condition_row.dart';
+import 'package:practice_work/core/constants/screen_constants.dart';
+import 'package:practice_work/core/constants/string_constants.dart';
+import 'package:practice_work/feature/auth/view_model/auth_controller.dart';
+import 'package:practice_work/feature/auth/view_model/auth_states.dart';
+import 'package:practice_work/screen_size.dart';
+
+import 'widgets/signin_screen_widgets/list_of_textfield.dart';
+import 'widgets/signin_screen_widgets/term_condition_row.dart';
 
 class SigninScreen extends StatelessWidget {
   const SigninScreen({super.key});
@@ -44,6 +48,21 @@ class SigninScreen extends StatelessWidget {
             ),
             SizedBox(
               height: ScreenSize.height * zeroPointZeroFive,
+            ),
+            Consumer(
+              builder: (context, ref, child) {
+                final state = ref.watch(authControllerProvider);
+                if (state is AuthErrorState) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        state.message,
+                      ),
+                    ),
+                  );
+                }
+                return const SizedBox();
+              },
             ),
           ],
         ),
