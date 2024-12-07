@@ -4,9 +4,9 @@ import 'package:practice_work/screen_constants.dart';
 import 'package:practice_work/screen_size.dart';
 import 'package:practice_work/common_widgets/toprow.dart';
 import 'package:practice_work/string_constants.dart';
-import 'package:practice_work/verification_button_row.dart';
+import 'package:practice_work/verification_screen_widgets.dart/verification_button_row.dart';
 
-import 'package:practice_work/verification_row.dart';
+import 'package:practice_work/verification_screen_widgets.dart/verification_row.dart';
 
 class VarificationScreen extends StatelessWidget {
   const VarificationScreen({super.key});

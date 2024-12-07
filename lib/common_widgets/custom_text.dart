@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:practice_work/screen_constants.dart';
 import 'package:practice_work/screen_size.dart';
 import 'package:practice_work/string_constants.dart';
-import 'package:practice_work/textfield.dart';
 
 class CustomRichText extends StatelessWidget {
   const CustomRichText(

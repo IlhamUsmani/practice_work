@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:practice_work/common_widgets/custom_buttons.dart';
-import 'package:practice_work/list_of_textfield.dart';
+import 'package:practice_work/signin_screen_widgets/list_of_textfield.dart';
 import 'package:practice_work/common_widgets/custom_text.dart';
 import 'package:practice_work/screen_constants.dart';
 import 'package:practice_work/screen_size.dart';
 import 'package:practice_work/common_widgets/toprow.dart';
 import 'package:practice_work/string_constants.dart';
-import 'package:practice_work/term_condition_row.dart';
+import 'package:practice_work/signin_screen_widgets/term_condition_row.dart';
 
 class SigninScreen extends StatelessWidget {
   const SigninScreen({super.key});

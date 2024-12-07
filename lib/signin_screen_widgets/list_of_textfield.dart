@@ -3,13 +3,14 @@ import 'package:practice_work/signup_screen_widgets.dart/dropdown_widget.dart';
 import 'package:practice_work/screen_constants.dart';
 import 'package:practice_work/screen_size.dart';
 import 'package:practice_work/string_constants.dart';
-import 'package:practice_work/textfield.dart';
+import 'package:practice_work/common_widgets/textfield.dart';
 
 class ListOfTextfield extends StatelessWidget {
   const ListOfTextfield({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dummyController = TextEditingController();
     List<String> textList = [
       firstName,
       lastName,
@@ -38,6 +39,7 @@ class ListOfTextfield extends StatelessWidget {
                   Expanded(
                       flex: 4,
                       child: CustomTextField(
+                        controller: dummyController,
                         text: textList[index],
                         icon: const DropdownWidget(),
                       )),
@@ -54,6 +56,7 @@ class ListOfTextfield extends StatelessWidget {
                   Expanded(
                       flex: 4,
                       child: CustomTextField(
+                        controller: dummyController,
                         text: textList[index],
                         icon: iconList[index - 6],
                       )),
@@ -67,7 +70,9 @@ class ListOfTextfield extends StatelessWidget {
               children: [
                 const Spacer(flex: 1),
                 Expanded(
-                    flex: 4, child: CustomTextField(text: textList[index])),
+                    flex: 4,
+                    child: CustomTextField(
+                        controller: dummyController, text: textList[index])),
               ],
             ),
           );

@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:practice_work/common_widgets/custom_buttons.dart';
-import 'package:practice_work/forget_passward_row.dart';
+import 'package:practice_work/signup_screen_widgets.dart/forget_passward_row.dart';
 import 'package:practice_work/common_widgets/custom_text.dart';
 import 'package:practice_work/screen_constants.dart';
 import 'package:practice_work/screen_size.dart';
-import 'package:practice_work/side_containers.dart';
+import 'package:practice_work/signup_screen_widgets.dart/side_containers.dart';
 import 'package:practice_work/string_constants.dart';
-import 'package:practice_work/textfield.dart';
-import 'package:practice_work/welcomeText.dart';
+import 'package:practice_work/common_widgets/textfield.dart';
+import 'package:practice_work/signup_screen_widgets.dart/welcomeText.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController dummyController = TextEditingController();
     ScreenSize(context);
     return Scaffold(
       backgroundColor: white,
@@ -43,6 +44,7 @@ class SignupScreen extends StatelessWidget {
               height: ScreenSize.height * zeroPointZeroFive,
             ),
             CustomTextField(
+              controller: dummyController,
               height: ScreenSize.height * zeroPointOne,
               text: email,
             ),
@@ -50,6 +52,7 @@ class SignupScreen extends StatelessWidget {
               height: ScreenSize.height * zeroPointZeroTwoZero,
             ),
             CustomTextField(
+                controller: dummyController,
                 height: ScreenSize.height * zeroPointOne,
                 text: password,
                 icon: const Icon(

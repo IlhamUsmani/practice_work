@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practice_work/screen_constants.dart';
 import 'package:practice_work/screen_size.dart';
-import 'package:practice_work/textfield.dart';
+import 'package:practice_work/common_widgets/textfield.dart';
 
 class VerificationCodeRow extends StatelessWidget {
   const VerificationCodeRow({super.key});
@@ -22,9 +22,11 @@ class VerificationBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController dummyController = TextEditingController();
     return ClipRRect(
       borderRadius: BorderRadius.circular(100),
       child: CustomTextField(
+        controller: dummyController,
         text: '    1',
         height: ScreenSize.height * zeroPointOne,
         width: ScreenSize.width * zeroPointOneFive,
